@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/target.mind",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        }
+      ]
+    }
+  ]
+}
