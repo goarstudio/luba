@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Любовь AR</title>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/aframe/mindar-image-aframe.prod.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      #ar-container { width: 100vw; height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="ar-container">
+      <a-scene mindar-image="imageTargetSrc: target.mind; autoStart: true;" embedded
+               color-space="sRGB" renderer="precision: mediump; antialias: true"
+               vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+        <a-assets>
+          <video id="video" src="video.mp4" autoplay loop="true" crossorigin="anonymous" muted="false" preload="auto"></video>
+        </a-assets>
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-entity mindar-image-target="targetIndex: 0">
+          <a-video src="#video" width="1.2" height="1.6" position="0 0 0" rotation="0 0 0"></a-video>
+        </a-entity>
+      </a-scene>
+    </div>
+  </body>
+</html>
